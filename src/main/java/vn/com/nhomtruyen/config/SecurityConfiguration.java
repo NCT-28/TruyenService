@@ -22,6 +22,8 @@ import org.springframework.security.oauth2.server.resource.authentication.JwtAut
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.core.oidc.user.OidcUserAuthority;
 import java.util.*;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
@@ -142,4 +144,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         return jwtDecoder;
     }
+    
+    @Bean
+   	public PasswordEncoder passwordEncoder() {
+   		return new BCryptPasswordEncoder();
+   	}
 }
