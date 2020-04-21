@@ -25,7 +25,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Table(name = "nt_group_translate")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class Group extends AbstractAuditingEntity implements Serializable {
+public class Group extends AbstractEntity implements Serializable {
 
 	/**
 	 * 

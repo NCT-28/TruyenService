@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "nt_role")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class Role extends AbstractAuditingEntity implements Serializable {
+public class Role extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

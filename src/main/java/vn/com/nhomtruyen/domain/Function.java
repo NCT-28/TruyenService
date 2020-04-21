@@ -19,7 +19,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Table(name = "nt_function")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class Function extends AbstractAuditingEntity implements Serializable {
+public class Function extends AbstractEntity implements Serializable {
 
 	/**
 	 * 
