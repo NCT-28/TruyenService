@@ -39,7 +39,7 @@ public class GroupServiceImpl implements GroupService {
 	private final Logger log = LoggerFactory.getLogger(RoleServiceImpl.class);
 
 	private final GroupRepository groupRepository;
-	private GroupMapper groupMapper;
+	private final GroupMapper groupMapper;
 	private final UserTruyenRepository userRepository;
 	private final RoleRepository roleRepository;
 
@@ -50,11 +50,12 @@ public class GroupServiceImpl implements GroupService {
 	 * @param groupMapper
 	 */
 	public GroupServiceImpl(GroupRepository groupRepository, UserTruyenRepository userRepository,
-			RoleRepository roleRepository) {
+			RoleRepository roleRepository, GroupMapper groupMapper) {
 		super();
 		this.groupRepository = groupRepository;
 		this.userRepository = userRepository;
 		this.roleRepository = roleRepository;
+		this.groupMapper=groupMapper;
 	}
 
 	/**

@@ -51,7 +51,7 @@ public class UserTruyenServiceImpl implements UserTruyenService {
 
 	private final UserTruyenRepository userRepository;
 	private final UserInfoRepository userInfoRepository;
-	private UserTruyenMapper userMapper;
+	private final UserTruyenMapper userMapper;
 	private final RoleRepository roleRepository;
 	private final GroupRepository groupRepository;
 	private final FunctionRepository functionRepository;
@@ -60,7 +60,7 @@ public class UserTruyenServiceImpl implements UserTruyenService {
 
 	public UserTruyenServiceImpl(UserTruyenRepository userRepository, UserInfoRepository userInfoRepository,
 			RoleRepository roleRepository, GroupRepository groupRepository, PasswordEncoder passwordEncoder,
-			FunctionRepository functionRepository) {
+			FunctionRepository functionRepository, UserTruyenMapper userMapper) {
 		super();
 		this.userRepository = userRepository;
 		this.userInfoRepository = userInfoRepository;
@@ -68,6 +68,7 @@ public class UserTruyenServiceImpl implements UserTruyenService {
 		this.groupRepository = groupRepository;
 		this.passwordEncoder = passwordEncoder;
 		this.functionRepository = functionRepository;
+		this.userMapper=userMapper;
 	}
 
 	@Override
