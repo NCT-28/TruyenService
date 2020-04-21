@@ -22,7 +22,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "nt_chuong")
-public class Chuong extends AbstractEntity implements Serializable {
+public class Chuong extends AbstractAuditingEntity implements Serializable {
 
 	/**
 	 * 

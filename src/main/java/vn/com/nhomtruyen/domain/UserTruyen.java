@@ -38,7 +38,7 @@ import vn.com.nhomtruyen.config.Constants;
 @Entity
 @Table(name = "nt_user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class UserTruyen extends AbstractEntity implements Serializable {
+public class UserTruyen extends AbstractAuditingEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

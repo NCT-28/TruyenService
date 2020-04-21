@@ -26,7 +26,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "nt_author")
-public class Author extends AbstractEntity implements Serializable{
+public class Author extends AbstractAuditingEntity implements Serializable{
 
 	/**
 	 * 

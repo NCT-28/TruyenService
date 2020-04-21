@@ -9,6 +9,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
@@ -22,7 +24,11 @@ import javax.persistence.MappedSuperclass;
 public abstract class AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
+    @Column(name = "code", nullable = false, length = 100, updatable = false)
+    @JsonIgnore
+    private String code= UUID.randomUUID().toString();
+    
     @CreatedBy
     @Column(name = "created_by", nullable = false, length = 50, updatable = false)
     @JsonIgnore
@@ -34,16 +40,25 @@ public abstract class AbstractAuditingEntity implements Serializable {
     private Instant createdDate = Instant.now();
 
     @LastModifiedBy
-    @Column(name = "last_modified_by", length = 50)
+    @Column(name = "updated_by", length = 50)
     @JsonIgnore
-    private String lastModifiedBy;
+    private String updateBy;
 
     @LastModifiedDate
-    @Column(name = "last_modified_date")
+    @Column(name = "updated_date")
     @JsonIgnore
-    private Instant lastModifiedDate = Instant.now();
+    private Instant updateDate = Instant.now();
+    
+    
+    public String getCode() {
+		return code;
+	}
 
-    public String getCreatedBy() {
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getCreatedBy() {
         return createdBy;
     }
 
@@ -59,19 +74,19 @@ public abstract class AbstractAuditingEntity implements Serializable {
         this.createdDate = createdDate;
     }
 
-    public String getLastModifiedBy() {
-        return lastModifiedBy;
-    }
+	public String getUpdateBy() {
+		return updateBy;
+	}
 
-    public void setLastModifiedBy(String lastModifiedBy) {
-        this.lastModifiedBy = lastModifiedBy;
-    }
+	public void setUpdateBy(String updateBy) {
+		this.updateBy = updateBy;
+	}
 
-    public Instant getLastModifiedDate() {
-        return lastModifiedDate;
-    }
+	public Instant getUpdateDate() {
+		return updateDate;
+	}
 
-    public void setLastModifiedDate(Instant lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
-    }
+	public void setUpdateDate(Instant updateDate) {
+		this.updateDate = updateDate;
+	}
 }

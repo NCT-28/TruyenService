@@ -204,8 +204,8 @@ public class UserResourceIT {
         assertThat(user.getLangKey()).isEqualTo(DEFAULT_LANGKEY);
         assertThat(user.getCreatedBy()).isNull();
         assertThat(user.getCreatedDate()).isNotNull();
-        assertThat(user.getLastModifiedBy()).isNull();
-        assertThat(user.getLastModifiedDate()).isNotNull();
+        assertThat(user.getUpdateBy()).isNull();
+        assertThat(user.getUpdateDate()).isNotNull();
         assertThat(user.getAuthorities()).extracting("name").containsExactly(AuthoritiesConstants.USER);
     }
 
@@ -214,8 +214,8 @@ public class UserResourceIT {
         user.setId(DEFAULT_ID);
         user.setCreatedBy(DEFAULT_LOGIN);
         user.setCreatedDate(Instant.now());
-        user.setLastModifiedBy(DEFAULT_LOGIN);
-        user.setLastModifiedDate(Instant.now());
+        user.setUpdateBy(DEFAULT_LOGIN);
+        user.setUpdateDate(Instant.now());
         Set<Authority> authorities = new HashSet<>();
         Authority authority = new Authority();
         authority.setName(AuthoritiesConstants.USER);
@@ -235,7 +235,7 @@ public class UserResourceIT {
         assertThat(userDTO.getCreatedBy()).isEqualTo(DEFAULT_LOGIN);
         assertThat(userDTO.getCreatedDate()).isEqualTo(user.getCreatedDate());
         assertThat(userDTO.getLastModifiedBy()).isEqualTo(DEFAULT_LOGIN);
-        assertThat(userDTO.getLastModifiedDate()).isEqualTo(user.getLastModifiedDate());
+        assertThat(userDTO.getLastModifiedDate()).isEqualTo(user.getUpdateDate());
         assertThat(userDTO.getAuthorities()).containsExactly(AuthoritiesConstants.USER);
         assertThat(userDTO.toString()).isNotNull();
     }

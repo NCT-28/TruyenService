@@ -26,7 +26,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "nt_truyen")
-public class Truyen extends AbstractEntity implements Serializable {
+public class Truyen extends AbstractAuditingEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

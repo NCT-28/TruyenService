@@ -65,8 +65,8 @@ public class UserDTO {
         this.langKey = user.getLangKey();
         this.createdBy = user.getCreatedBy();
         this.createdDate = user.getCreatedDate();
-        this.lastModifiedBy = user.getLastModifiedBy();
-        this.lastModifiedDate = user.getLastModifiedDate();
+        this.lastModifiedBy = user.getUpdateBy();
+        this.lastModifiedDate = user.getUpdateDate();
         this.authorities = user.getAuthorities().stream()
             .map(Authority::getName)
             .collect(Collectors.toSet());
