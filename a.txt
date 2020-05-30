@@ -1,6 +1,9 @@
 {
   "extends": "./tsconfig.json",
   "files": ["src/main/webapp/app/app.main.ts"]
+
 	test xung dot cua minh
+
+  abc test xung dot
   test push
 }
