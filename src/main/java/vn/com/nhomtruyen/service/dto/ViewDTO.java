@@ -3,10 +3,6 @@ package vn.com.nhomtruyen.service.dto;
 import java.io.Serializable;
 import java.time.Instant;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
 import vn.com.nhomtruyen.domain.Truyen;
 import vn.com.nhomtruyen.domain.View;
 
