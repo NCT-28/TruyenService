@@ -198,9 +198,8 @@ public class UserService {
             throw new IllegalArgumentException("AuthenticationToken is not OAuth2 or JWT!");
         }
         User user = getUser(attributes);
-        user.setAuthorities(authToken.getAuthorities().stream()
-            .map(GrantedAuthority::getAuthority)
-            .map(authority -> {
+        user.setAuthorities(getAuthorities().stream()
+                .map(authority -> {
                 Authority auth = new Authority();
                 auth.setName(authority);
                 return auth;
