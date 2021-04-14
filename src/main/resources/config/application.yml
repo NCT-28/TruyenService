@@ -119,11 +119,11 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: https://accounts.google.com/o/oauth2/auth
+            issuer-uri: https://dev-80201886.okta.com/oauth2/default
         registration:
           oidc:
-            client-id: 867885493168-vp8jd06c8qthatvflm99j7ru3sthacvk.apps.googleusercontent.com
-            client-secret: 3xlTRaLwDKgIJi8X7Qq74pY1
+            client-id: 0oal0vzv5xrchkntt5d6
+            client-secret: 3eUyPriA402d3vtA9zlaSpXPX6veum4QfRD39tbq
 
 server:
   servlet:
