@@ -119,11 +119,11 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/auth/realms/jhipster
+            issuer-uri: https://accounts.google.com/o/oauth2/auth
         registration:
           oidc:
-            client-id: web_app
-            client-secret: web_app
+            client-id: 867885493168-vp8jd06c8qthatvflm99j7ru3sthacvk.apps.googleusercontent.com
+            client-secret: 3xlTRaLwDKgIJi8X7Qq74pY1
 
 server:
   servlet:
